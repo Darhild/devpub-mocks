@@ -12,10 +12,6 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
-app.get("*", function(req, res) {
-  response.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
-});
-
 app.get('/api/post', (req, res) => {
     res.send(post);
 });
