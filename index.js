@@ -17,7 +17,7 @@ app.get('/api/post', (req, res) => {
 });
 
 app.get('/api/tag', (req, res) => {
-  res.send(tag.tags);
+  res.send(tag);
 })
 
 app.listen(process.env.PORT || PORT);
