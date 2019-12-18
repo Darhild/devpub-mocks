@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const post = require('./post.json');
+const calendar = require('./calendar.json');
+const byDate = require('./byDate.json');
 const tag = require('./tag.json');
 const moderated = require('./moderated.json');
 const app = express();
@@ -15,6 +17,14 @@ app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
 app.get('/api/post', (req, res) => {
     res.send(post);
+});
+
+app.get('/api/post/byDate', (req, res) => {
+  res.send(byDate);
+});
+
+app.get('/api/post/calendar', (req, res) => {
+  res.send(calendar);
 });
 
 app.get('/api/post/moderation', (req, res) => {
