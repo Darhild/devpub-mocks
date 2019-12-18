@@ -23,7 +23,7 @@ app.get('/api/post/byDate', (req, res) => {
   res.send(byDate);
 });
 
-app.get('/api/post/calendar', (req, res) => {
+app.get('/api/calendar', (req, res) => {
   res.send(calendar);
 });
 
