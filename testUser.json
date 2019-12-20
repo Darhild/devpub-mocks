@@ -1,0 +1,9 @@
+ {
+  "id": 88,
+  "name": "Дмитрий Петров",
+  "photo": "avatar.jpg",
+  "email": "petrov@petroff.ru",
+  "moderation": true,
+  "moderationCount": 48,
+  "settings": true
+}

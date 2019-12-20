@@ -4,6 +4,7 @@ const post = require('./post.json');
 const calendar = require('./calendar.json');
 const byDate = require('./byDate.json');
 const tag = require('./tag.json');
+const user = require('./testUser.json');
 const moderated = require('./moderated.json');
 const app = express();
 const { PORT } = require('./env');
@@ -34,6 +35,13 @@ app.get('/api/post/moderation', (req, res) => {
 app.get('/api/tag', (req, res) => {
   res.send(tag);
 })
+
+app.post('/api/auth/auth', (req, res) => {
+  res.send({
+    "result": true,
+    "user": user
+  });
+});
 
 app.listen(process.env.PORT || PORT);
 console.log(`Server listens on Port ${PORT}`)
