@@ -88,8 +88,8 @@ app.post('/api/auth/auth', (req, res) => {
 })
 
 app.post('/api/auth/restore', (req, res) => {
-  const res = Math.round(Math.random());
-  res.send({ result: res })
+  const num = Math.round(Math.random());
+  res.send({ result: num })
 })
 
 app.post('/api/auth/like', (req, res) => {
