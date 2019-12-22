@@ -92,11 +92,11 @@ app.post('/api/auth/restore', (req, res) => {
   res.send({ result: Boolean(num) })
 })
 
-app.post('/api/auth/like', (req, res) => {
+app.post('/api/post/like', (req, res) => {
   res.send({ result: true })
 })
 
-app.post('/api/auth/dislike', (req, res) => {
+app.post('/api/post/dislike', (req, res) => {
   res.send({ result: true })
 })
 
