@@ -83,6 +83,14 @@ app.get('/api/auth/logout', (req, res) => {
   res.send({ result: true })
 })
 
+app.get('/api/settings', (req, res) => {
+  res.send({
+    "MULTIUSER_MODE": "YES",
+    "POST_PREMODERATION": "NO",
+    "STATISTICS_IS_PUBLIC": "YES"
+  })
+})
+
 app.post('/api/comment', (req, res) => {
   res.send({ id: 388 })
 })
@@ -125,7 +133,7 @@ app.post('/api/auth/register', (req, res) => {
   const result = Math.round(Math.random());
 
   if(result) {
-    res.send({ result })
+    res.send({ result: true })
   } else res.send({
     "result": false,
     "errors": {
@@ -139,7 +147,7 @@ app.post('/api/profile/my', (req, res) => {
   const result = Math.round(Math.random());
 
   if(result) {
-    res.send({ result })
+    res.send({ result: true })
   } else res.send({
     "result": false,
     "errors": {
