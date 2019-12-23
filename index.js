@@ -151,17 +151,7 @@ app.post('/api/auth/register', (req, res) => {
 })
 
 app.post('/api/profile/my', (req, res) => {
-  const result = Math.round(Math.random());
-
-  if(result) {
-    res.send({ result: true })
-  } else res.send({
-    "result": false,
-    "errors": {
-      "email": "Этот email уже зарегистрирован",
-      "photo": "Фото слишком большое, нужно не более 5 Мб"
-    }
-  })
+  res.send({ result: true })
 })
 
 app.post('/api/post', (req, res) => {
