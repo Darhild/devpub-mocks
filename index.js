@@ -85,9 +85,9 @@ app.get('/api/auth/logout', (req, res) => {
 
 app.get('/api/settings', (req, res) => {
   res.send({
-    "MULTIUSER_MODE": "YES",
-    "POST_PREMODERATION": "NO",
-    "STATISTICS_IS_PUBLIC": "YES"
+    "MULTIUSER_MODE": true,
+    "POST_PREMODERATION": false,
+    "STATISTICS_IS_PUBLIC": true
   })
 })
 
