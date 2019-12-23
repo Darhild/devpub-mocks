@@ -80,7 +80,7 @@ app.post('/api/comment', (req, res) => {
   res.send({ id: 388 })
 })
 
-app.post('/api/auth/auth', (req, res) => {
+app.post('/api/auth/login', (req, res) => {
   res.send({
     "result": true,
     "user": user
