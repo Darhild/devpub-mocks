@@ -48,6 +48,13 @@ app.get('/api/post/moderation', (req, res) => {
   res.send(moderated);
 })
 
+app.get('/api/auth/captcha', (req, res) => {
+  res.send({
+    "secret": "car4y8cryaw84cr89awnrc",
+    "image": "data:image/png;base64,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"
+  });
+})
+
 app.get('/api/statistics/my', (req, res) => {
   res.send({
     "postsCount": 7,
@@ -109,7 +116,7 @@ app.post('/api/auth/password', (req, res) => {
     "result": false,
     "errors": {
       "code": "Ссылка для восстановления пароля устарела. <a href='login/resstore'>Запросить ссылкеу снова.</a>",
-      "captcha": "Пароль короче шести символов"
+      "captcha": "Код с картинки введет неверно"
     }
   })
 })
@@ -123,7 +130,7 @@ app.post('/api/auth/register', (req, res) => {
     "result": false,
     "errors": {
       "email": "Этот email уже зарегистрирован",
-      "captcha": "Пароль короче шести символов"
+      "captcha": "Код с картинки введет неверно"
     }
   })
 })
