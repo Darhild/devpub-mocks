@@ -95,6 +95,13 @@ app.post('/api/comment', (req, res) => {
   res.send({ id: 388 })
 })
 
+app.get('/api/auth/check', (req, res) => {
+  res.send({
+    "result": true,
+    "user": user
+  });
+})
+
 app.post('/api/auth/auth', (req, res) => {
   res.send({
     "result": true,
