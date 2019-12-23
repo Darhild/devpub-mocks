@@ -115,8 +115,8 @@ app.post('/api/auth/password', (req, res) => {
   } else res.send({
     "result": false,
     "errors": {
-      "code": "Ссылка для восстановления пароля устарела. <a href='login/resstore'>Запросить ссылкеу снова.</a>",
-      "captcha": "Код с картинки введет неверно"
+      "code": "Ссылка для восстановления пароля устарела. <a href='/login/restore-password'>Запросить ссылку снова.</a>",
+      "captcha": "Код с картинки введен неверно"
     }
   })
 })
