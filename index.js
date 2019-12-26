@@ -6,6 +6,7 @@ const byDate = require('./byDate.json');
 const tag = require('./tag.json');
 const user = require('./testUser.json');
 const moderated = require('./moderated.json');
+const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const app = express();
 const { PORT } = require('./env');
@@ -21,9 +22,11 @@ const allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain);
 
+app.use(fileUpload({
+  createParentPath: true
+}));
 
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
 app.get('/api/post', (req, res) => {
