@@ -112,9 +112,7 @@ app.post('/api/auth/login', (req, res) => {
 })
 
 app.post('/api/images', (req, res) => {
-  res.send({
-    data: "assets/default-1.png"
-  });
+  res.send("assets/default-1.png");
 })
 
 app.post('/api/auth/restore', (req, res) => {
