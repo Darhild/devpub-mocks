@@ -34,10 +34,6 @@ app.get('/api/post', (req, res) => {
     res.send(post);
 })
 
-app.get('/api/post/:id', (req, res) => {
-  res.send(singlePost);
-}),
-
 app.get('/api/post/search', (req, res) => {
   res.send(post);
 })
@@ -61,6 +57,10 @@ app.get('/api/post/my', (req, res) => {
 app.get('/api/post/moderation', (req, res) => {
   res.send(moderated);
 })
+
+app.get('/api/post/:id', (req, res) => {
+  res.send(singlePost);
+}),
 
 app.get('/api/auth/captcha', (req, res) => {
   res.send({
