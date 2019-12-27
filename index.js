@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const post = require('./post.json');
+const singlePost = require('./singlePost.json');
 const calendar = require('./calendar.json');
 const byDate = require('./byDate.json');
 const tag = require('./tag.json');
@@ -32,6 +33,10 @@ app.use(express.static(path.resolve(__dirname, "../client/dist")));
 app.get('/api/post', (req, res) => {
     res.send(post);
 })
+
+app.get('/api/post/:id', (req, res) => {
+  res.send(singlePost);
+}),
 
 app.get('/api/post/search', (req, res) => {
   res.send(post);
