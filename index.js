@@ -28,7 +28,18 @@ app.use(fileUpload({
 }));
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.resolve(__dirname, "../client/dist")));
+app.use(express.static(path.resolve(__dirname, "../client/dist")));\
+
+app.get('/api/init', (req, res) => {
+  res.send({
+    "title": "DevPub",
+    "subtitle": "Рассказы разработчиков",
+    "phone": "+7 903 666-44-55",
+    "email": "mail@mail.ru",
+    "copyright": "Дмитрий Сергеев",
+    "copyrightFrom": 2005
+  });
+})
 
 app.get('/api/post', (req, res) => {
     res.send(post);
@@ -123,7 +134,7 @@ app.post('/api/auth/login', (req, res) => {
   });
 })
 
-app.post('/api/images', (req, res) => {
+app.post('/api/image', (req, res) => {
   res.send("\/static\/default-1.png");
 })
 
