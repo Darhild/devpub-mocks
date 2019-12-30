@@ -51,10 +51,11 @@ app.get('/api/post', (req, res) => {
     const limit = req.query.limit;
 
     const posts = post.posts.slice(offset, limit);
+    console.log(posts);
 
     const post = {
       "count": post.count,
-      posts
+      "posts": posts
     }
     res.send(post);
 })
