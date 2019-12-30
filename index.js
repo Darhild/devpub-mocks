@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const post = require('./post.json');
+const post = require('./post14.json');
 const singlePost = require('./singlePost.json');
 const calendar = require('./calendar.json');
 const byDate = require('./byDate.json');
@@ -30,6 +30,11 @@ app.use(fileUpload({
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
+app.use((req, res, next) => {
+  if (req.query.limit)
+  next();
+});
+
 app.get('/api/init', (req, res) => {
   res.send({
     "title": "DevPub",
@@ -42,6 +47,15 @@ app.get('/api/init', (req, res) => {
 })
 
 app.get('/api/post', (req, res) => {
+    const offset = req.query.offset;
+    const limit = req.query.limit;
+
+    const posts = post.posts.slice(offset, limit);
+
+    const post = {
+      "count": post.count,
+      posts
+    }
     res.send(post);
 })
 
