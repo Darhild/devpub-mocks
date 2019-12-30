@@ -30,11 +30,6 @@ app.use(fileUpload({
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
-app.use((req, res, next) => {
-  if (req.query.limit)
-  next();
-});
-
 app.get('/api/init', (req, res) => {
   res.send({
     "title": "DevPub",
